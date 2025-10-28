@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Risk Prediction</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background: white;
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      color: #e63946;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      margin-top: 8px;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    input[type="number"]:focus {
+      border-color: #457b9d;
+      outline: none;
+      box-shadow: 0 0 5px #a8dadc;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background: #1d3557;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background: #457b9d;
+    }
+
+    .note {
+      color: #555;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="/predict" method="post">
+    <h2>Heart Attack Risk Prediction</h2>
+
+    <label>AGE:</label>
+    <input type="number" name="age" required>
+
+    <label>SEX:</label>
+    <p class="note">(0 = Male, 1 = Female)</p>
+    <input type="number" name="sex" required>
+
+    <label>CHEST PAIN TYPE:</label>
+    <p class="note">0 = Typical angina, 1 = Atypical angina, 2 = Non-anginal pain, 3 = Asymptomatic</p>
+    <input type="number" name="cp" required>
+
+    <label>BLOOD PRESSURE:</label>
+    <input type="number" name="trtbp" required>
+
+    <label>CHOLESTEROL:</label>
+    <input type="number" name="chol" required>
+
+    <label>SUGAR LEVEL:</label>
+    <input type="number" name="fbs" required>
+
+    <label>REST ECG:</label>
+    <p class="note">0 = Normal, 1 = ST-T abnormality, 2 = LV hypertrophy</p>
+    <input type="number" name="restecg" required>
+
+    <label>MAX HEART RATE:</label>
+    <input type="number" name="thalach" required>
+
+    <label>EXERCISE INDUCED ANGINA:</label>
+    <p class="note">0 = No, 1 = Yes</p>
+    <input type="number" name="exng" required>
+
+    <label>OLD PEAK:</label>
+    <input type="number" name="oldpeak" required>
+
+    <label>SLOPE:</label>
+    <input type="number" name="slp" required>
+
+    <label>CAA:</label>
+    <p class="note">0 = Low, 1 = Medium, 2 = Severe</p>
+    <input type="number" name="caa" required>
+
+    <label>THALL:</label>
+    <input type="number" name="thall" required>
+
+    <input type="submit" value="Predict">
+  </form>
+</body>
+</html>
